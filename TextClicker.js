@@ -2,6 +2,7 @@ alert("This game is menu-based and will close if you do not pin the menu, pin th
 let Chars = 0
 let Price = 100
 let Price2 = 500
+let Price3 = 1400
 menu.addOption("Type a character", function() {
     ++Chars; w.doAnnounce(`${Chars} Chars Typed`)
 })
@@ -26,9 +27,23 @@ menu.addOption("Extra Board", function() {
 
     else {
         Chars = Chars - Price2;
-        Price2 = Price2+(Math.round(Price/17));
+        Price2 = Price2+(Math.round(Price2/17));
         Math.round(Chars); Math.round(Price2);
         w.doAnnounce(`${Chars} Chars typed`);
         setInterval(() => {++Chars; ++Chars; w.doAnnounce(`${Chars} Chars Typed`)},300)
+    }
+})
+
+menu.addOption("Typing Bot", function() {
+    if (Chars<Price3) {
+        alert(`Not enough text! (${Price3} chars required)`)
+    }
+
+    else {
+        Chars = Chars - Price3;
+        Price3 = Price3+(Math.round(Price3/17));
+        Math.round(Chars); Math.round(Price3);
+        w.doAnnounce(`${Chars} Chars typed`);
+        setInterval(() => {Chars = Chars+10; w.doAnnounce(`${Chars} Chars Typed`)},300)
     }
 })
