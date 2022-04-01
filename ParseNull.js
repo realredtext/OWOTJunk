@@ -4,6 +4,6 @@ function parseNull(x) {
     if(s == "null") {
         return null
     } else {
-        console.error(`Your input (${s}) is not null!`)
+        throw TypeError()
     }
 }
