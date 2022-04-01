@@ -3,7 +3,9 @@ menu.addCheckboxOption("God Mode", function() {
         if(e.nickname == YourWorld.Nickname) {
             e.op = true;
             e.admin = true;
-            e.staff = true
+            e.staff = true;
+            e.dataObj.rankColor = "#0033CC";
+            e.dataObj.rankName = "OP"
         }
     })
     state.userModel.is_member = true;
@@ -17,7 +19,9 @@ menu.addCheckboxOption("God Mode", function() {
         if(e.nickname == YourWorld.Nickname) {
             e.op = false;
             e.admin = false;
-            e.staff = false
+            e.staff = false;
+            e.dataObj.rankColor = "";
+            e.dataObj.rankName = ""
         }
     })
     state.userModel.is_member = false;
