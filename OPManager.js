@@ -1,25 +1,19 @@
-function addOperator(newOperator) {
-    w.on("chatMod", function(e) {
-        if(e.realUsername == newOperator) {
-            e.op = true
+//credit goes to FP for the chat command part
+
+client_commands.addop = function(args) {
+    w.on("chatmod", (e) => {
+        if(e.realUsername == args[0]) {
+            e.op = true;
         }
     });
-    addChat(null, 0, "user", "[ OP Manager ]", `${newOperator} is now (OP).`, "[ OP Manager ]", false, false, false, "#0033CC", getDate())
+    addChat(null, 0, "user", "[ (OP) Manager ]", `${args[0]} is now (OP)`, "[ (OP) Manager ]", false, false, false, "#0033CC", getDate())
 }
-menu.addOption("Add Operator", function() {
-    let operator = prompt("Who to add as OP:");
-    addOperator(operator)
-})
 
-function removeOperator(user) {
-    w.on("chatMod", function(e) {
-        if(e.realUsername == user) {
-            e.op = false
+client_commands.removeop = function(args) {
+    w.on("chatmod", (e) => {
+        if(e.realUsername == args[0]) {
+            e.op = false;
         }
-    })
-    addChat(null, 0, "user", "[ OP ]", `${user} is now (OP).`, "[ OP Manager ]", false, false, false, "#0033CC", getDate())
+    });
+    addChat(null, 0, "user", "[ (OP) Manager ]", `${args[0]} is no longer (OP)`, "[ (OP) Manager ]", false, false, false, "#0033CC", getDate())
 }
-menu.addOption("Remove Operator", function() {
-    let unOperator = prompt("Who to remove from OP:");
-    removeOperator(unOperator)
-})
