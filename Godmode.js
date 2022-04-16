@@ -1,6 +1,6 @@
-menu.addCheckboxOption("God Mode", function() {
-    w.on("chatMod", function(e) {
-        if(e.nickname == YourWorld.Nickname) {
+menu.addCheckboxOption("God Mode", () => {
+    w.on("chatMod", (e) => {
+        if(e.realUsername == state.userModel.username) {
             e.op = true;
             e.admin = true;
             e.staff = true;
@@ -14,9 +14,9 @@ menu.addCheckboxOption("God Mode", function() {
     state.userModel.is_staff = true;
     state.userModel.is_superuser = true;
     state.worldModel.show_cursor = 0;
-}, function() {
-    w.on("chatMod", function(e) {
-        if(e.nickname == YourWorld.Nickname) {
+}, () => {
+    w.on("chatMod", (e) => {
+        if(e.realUsername == state.userModel.username) {
             e.op = false;
             e.admin = false;
             e.staff = false;
