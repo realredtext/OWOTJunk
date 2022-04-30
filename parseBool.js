@@ -1,14 +1,13 @@
-function parseBool(x) {
-    let s = x.toLowerCase();
-    if(s == "true") {
-        return true
-    }
-
-    else if(s == "false") {
-        return false
-    }
-
-    else {
-        throw TypeError()
+function parseBool(str) {
+    let lc = str.toLowerCase();
+    switch (lc) {
+        case "true":
+            return true;
+            break;
+        case "false":
+            return false;
+            break;
+        default:
+            throw TypeError()
     }
 }
