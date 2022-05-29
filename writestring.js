@@ -1,4 +1,4 @@
-function writeString(string,MoveCursor){
+let writeString = (string, MoveCursor) => {
     var i;
     for (i = 0; i < string.length; i++) { 
           var lastChar = string.charAt(i);
