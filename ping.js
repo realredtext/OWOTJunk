@@ -2,6 +2,7 @@ let pingTone = new Audio("https://upload.wikimedia.org/wikipedia/commons/transco
 
 w.on("chatmod", (e) => {
     if(e.message.includes(`@${state.userModel.username}`)) {
+        pingTone.time = 0
         pingTone.play()
     }
 })
