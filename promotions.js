@@ -7,7 +7,7 @@ client_commands.promote = (args) => {
     };
 
     let rankTags = {
-        "staff": {rankName: "M", rankColor: "#008000"},
+        "staff": {rankName: "M", rankColor: "#009933"},
         "admin": {rankName: "A", rankColor: "#FF0000"},
         "op": {rankName: "OP", rankColor: "#0033CC"}
     }
