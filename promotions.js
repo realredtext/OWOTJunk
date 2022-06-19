@@ -11,7 +11,7 @@ client_commands.promote = (args) => {
         "admin": {rankName: "A", rankColor: "#FF0000"},
         "op": {rankName: "OP", rankColor: "#0033CC"}
     }
-    if(! args[1] in validRanks) {
+    if(! Object.keys(rankTags).includes(validRanks)) {
         clientChatResponse(`${args[1]} is not a valid type!`)
     };
     w.on("chatmod", (e) => {
