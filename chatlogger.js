@@ -10,11 +10,17 @@ w.on("chatmod", (e) => {
     };
 });
 
+/*storing chat logs:
+1. export chat log and remove apostrophes around log
+2. put chat log in text editor
+3. save log as HTML file
+4. open log in browser
+*/
 const exportLogs = {
     page: () => {
         let pageLog = "";
         logs.page.forEach((msg) => {
-            pageLog += `${msg}\n`;
+            pageLog += `<div><span>${msg}</span></div><br>`;
         });
         return pageLog;
     },
@@ -22,7 +28,7 @@ const exportLogs = {
     global: () => {
         let globalLog = "";
         logs.global.forEach((msg) => {
-            globalLog += `${msg}\n`;
+            globalLog += `<div><span>${msg}</span></div><br>`;
         });
         return globalLog;
     }
