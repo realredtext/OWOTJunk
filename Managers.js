@@ -1,7 +1,15 @@
-let addManager = (nick, color, message) => {
-    nick = `[ ${nick} ]`;
-    if(color.startsWith("#") == false) {
-        color = `#${color}`
+class Manager {
+    constructor(color, name) {
+        if(!name) return;
+        if(!color) color = "#000000";
+        this.name = `[ ${name} ]`;
+        this.color = color;
     };
-    addChat(null, 0, "user", nick, message, nick, false, false, false, color, getDate())
-}
+
+    name = this.name;
+    color = this.color;
+
+    send(message, op) {
+        addChat(null, 0, "user", this.name, message, this.name.replace(/[\[\]]/gm, ""), op, false, false, this.color, getDate())
+    };
+};
