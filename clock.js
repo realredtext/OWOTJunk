@@ -1,4 +1,4 @@
-let announceDate = () => {
+const announceDate = () => {
     w.doAnnounce(Date().slice(0, 24));
 };
 
