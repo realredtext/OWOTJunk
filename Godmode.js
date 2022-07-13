@@ -1,21 +1,20 @@
 menu.addCheckboxOption("God Mode", () => {
-    w.on("chatMod", (e) => {
+    w.on("chatmod", (e) => {
         if(e.realUsername == state.userModel.username) {
             e.op = true;
             e.admin = true;
             e.staff = true;
             e.dataObj.rankColor = "#0033CC";
-            e.dataObj.rankName = "OP"
-        }
-    })
-    state.userModel.is_member = true;
-    state.userModel.is_operator = true;
-    state.userModel.is_owner = true;
-    state.userModel.is_staff = true;
-    state.userModel.is_superuser = true;
-    state.worldModel.show_cursor = 0;
+            e.dataObj.rankName = "OP";
+        };
+    });
+    for(const i of Object.keys(state.userModel)) {
+        if(typeof state.userModel[i] === "boolean") {
+            state.userModel[i] = true;
+        };
+    ;}
 }, () => {
-    w.on("chatMod", (e) => {
+    w.on("chatmod", (e) => {
         if(e.realUsername == state.userModel.username) {
             e.op = false;
             e.admin = false;
@@ -24,10 +23,9 @@ menu.addCheckboxOption("God Mode", () => {
             e.dataObj.rankName = ""
         }
     })
-    state.userModel.is_member = false;
-    state.userModel.is_operator = false;
-    state.userModel.is_owner = false;
-    state.userModel.is_staff = false;
-    state.userModel.is_superuser = false;
-    state.worldModel.show_cursor = -1;
-}, false)
+    for(const i of Object.keys(state.userModel)) {
+        if(typeof state.userModel[i] === "boolean" && i !== "authenticated") {
+            state.userModel[i] = false;
+        };
+    };
+}, false);
