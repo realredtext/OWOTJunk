@@ -12,15 +12,16 @@ client_commands.promote = (args) => {
         "op": {rankName: "OP", rankColor: "#0033CC"}
     }
     if(! Object.keys(rankTags).includes(validRanks)) {
-        clientChatResponse(`${args[1]} is not a valid type!`)
+        clientChatResponse(`${args[1]} is not a valid type!`);
+        return;
     };
     w.on("chatmod", (e) => {
         if(e.realUsername === args[0]) {
             e[validRanks[args[1]]] = true;
-            e.dataObj = rankTags[validRanks[args[1]]]
-        }
+            e.dataObj = rankTags[validRanks[args[1]]];
+        };
     });
-    clientChatResponse(`${args[0]} promoted to ${args[1]}`)
+    clientChatResponse(`${args[0]} promoted to ${args[1]}`);
 };
 
 client_commands.demote = (args) => {
@@ -28,8 +29,8 @@ client_commands.demote = (args) => {
         if(e.realUsername === args[0]) {
             e.staff = false;
             e.admin = false;
-            e.op = false
-        }
+            e.op = false;
+        };
     });
-    clientChatResponse(`${args[0]} demoted to normal user`)
-}
+    clientChatResponse(`${args[0]} demoted to normal user`);
+};
