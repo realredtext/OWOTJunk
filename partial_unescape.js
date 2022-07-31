@@ -53,7 +53,7 @@ function addChat(chatfield, id, type, nickname, message, realUsername, op, admin
 	};
     //not all tags are bad
     message = multiReplace(message, html_tag_esc(Object.keys(customTags)), Object.keys(customTags));
-    message = multiReplace(message, html_tag_esc(values(customTags)), values(customTags));
+    message = multiReplace(message, html_tag_esc(Object.values(customTags)), Object.values(customTags));
     
     message = multiReplace(message, Object.keys(customTags), Object.keys(customTagsHTML));
     message = multiReplace(message, Object.values(customTags), Object.values(customTagsHTML));
