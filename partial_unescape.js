@@ -8,10 +8,10 @@ let customTags = { //"opening": "closing",
 
 let customTagsHTML = {
     "<b><i>": "</b></i>",
-    `<span style="color: #F00">`: "</span>",
-    `<span style="color: #0F0">`: "</span>",
-    `<span style="color: #00F">`: "</span>",
-    `<span style="text-decoration: underline">`: "</span>"
+    '<span style="color: #F00">': "</span>", //lord forgive me for unironically using single quotes
+    '<span style="color: #0F0">': "</span>",
+    '<span style="color: #00F">': "</span>",
+    '<span style="text-decoration: underline">': "</span>"
 };
 
 function multiReplace(string, searchVals, replaceVals) { //both are arrays
