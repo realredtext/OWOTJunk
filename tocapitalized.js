@@ -1,6 +1,3 @@
 function toCapitalized(str) {
-    let strToArray = str.split("");
-    strToArray[0] = strToArray[0].toUpperCase();
-    let capitalizedStr = (strToArray.toString()).replaceAll(",", "");
-    return capitalizedStr
-}
+    return str.replace(str[0], str[0].toUpperCase());
+};
