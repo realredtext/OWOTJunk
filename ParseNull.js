@@ -1,9 +1,8 @@
-//for fp
-function parseNull(x) {
-    let s = x.toLowerCase();
-    if(s == "null") {
-        return null
-    } else {
-        throw TypeError()
-    }
-}
+let parseNull = (str) => {
+    str+="";
+    str = str.toUpperCase();
+    
+    if(! str in {"null": null}) return;
+    
+    return null;
+ };
