@@ -1,3 +1,4 @@
+//dev console tool to chat for worlds without a chat
 w.broadcastReceive(1);
 w.on("cmd", (e) => {
     if(e.sender != w.socketChannel) {
