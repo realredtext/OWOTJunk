@@ -1,2 +1,2 @@
-# these scripts are for the site ourworldoftext.com, most suck, some dont
-# 
+# i love men (very homo)
+# no need to say no homo everytime i do something i want to 
