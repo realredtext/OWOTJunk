@@ -6,6 +6,6 @@ w.on("cmd", (e) => {
 
 let broadcastChat = (msg) => {
     msg += "";
-    let chatString = `${state.userModel.authenticated?state.userModel.username:(canChat?w.clientId:w.socketChannel)}: ${msg}`;
+    let chatString = `${state.userModel.authenticated?state.userModel.username:(canChat?"["+w.clientId+"]":"["+w.socketChannel+"]")}: ${msg}`;
     w.broadcastCommand(chatString);
 };
