@@ -53,7 +53,7 @@ charMeasurer.onselection(function(coordA, coordB, regWidth, regHeight) {
 	var measuredXTiles = regWidth / 16;
 	var measuredYTiles = regHeight / 8;
     var measuredTileArea = measuredXTiles * measuredYTiles;
-	measurementOut(`<br>Chars:<br>X: ${regWidth},<br>Y: ${regHeight}<br>Area: ${measuredTileArea*128}<br>Tiles:<br>X: ${measuredXTiles},<br>Y: ${measuredYTiles}<br>Area: ${measuredTileArea} tiles²`);
+	measurementOut(`<br>Chars:<br>X: ${regWidth},<br>Y: ${regHeight}<br>Area: ${measuredTileArea*128} chars²<br>Tiles:<br>X: ${measuredXTiles},<br>Y: ${measuredYTiles}<br>Area: ${measuredTileArea} tiles²`);
 });
 
 var measurementSubcommands = {
