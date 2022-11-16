@@ -30,8 +30,8 @@ tileMeasurer.onselection(function(coordA, coordB, regWidth, regHeight) {
     var minTileY = coordA[1];
     var maxTileX = coordB[0];
     var maxTileY = coordB[1];
-	var measuredXTiles = maxTileX - minTileX;
-	var measuredYTiles = maxTileY - minTileY;
+	var measuredXTiles = (maxTileX - minTileX) + 1;
+	var measuredYTiles = (maxTileY - minTileY) + 1;
 	var measuredXChars = measuredXTiles * 16;
 	var measuredYChars = measuredYTiles * 8;
 	var measuredXCoords = measuredXTiles / 4;
