@@ -1,22 +1,26 @@
 function measurementOut(text) {
-	addChat(null, 0, "user", "[ Measurer ]", text, "Measurer", true, true, true, "#FFFF00", getDate());
+	addChat(null, 0, "user", "[ Measurer ]", text, "Measurer", true, true, true, "#000000", getDate());
 };
 
 /* Measurement structure:
 	Coordinates:
 		X: x length,
-		Y: y length
+		Y: y length,
+        x*y coords²
 	Tiles:
 		X: x length,
-		Y: y length
+		Y: y length,
+        x*y tiles²
 	Chars:
 		X: x length,
-		Y: y length
+		Y: y length,
+        x*y chars²
 */
 
 /* Conversions:
 	1 Y coordinate right = 4 tiles up = 32 chars up
 	1 X coordinate right = 4 tiles right = 64 chars right
+    1 coord² = 16 tiles² = 2048 chars²
 */
 
 var tileMeasurer = new RegionSelection();
@@ -36,7 +40,8 @@ tileMeasurer.onselection(function(coordA, coordB, regWidth, regHeight) {
 	var measuredYChars = measuredYTiles * 8;
 	var measuredXCoords = measuredXTiles / 4;
 	var measuredYCoords = measuredYTiles / 4;
-	measurementOut(`Coordinates:<br>&#9;X: ${measuredXCoords},<br>&#9;Y: ${measuredYCoords}<br>Tiles:<br>&#9;X: ${measuredXTiles},<br>&#9;Y: ${measuredYTiles}<br>Chars:<br>&#9;X: ${measuredXChars},<br>&#9;Y: ${measuredYChars}`)
+    var measuredCoordArea = measuredXCoords * measuredYCoords;
+	measurementOut(`<br>Coordinates:<br>X: ${measuredXCoords},<br>Y: ${measuredYCoords}<br>Area: ${measuredCoordArea} coords²<br>Tiles:<br>X: ${measuredXTiles},<br>Y: ${measuredYTiles}<br>Area: ${measuredCoordArea*16} tiles²<br>Chars:<br>X: ${measuredXChars},<br>Y: ${measuredYChars}<br>Area: ${measuredCoordArea*16*128} chars²`)
 });
 
 var charMeasurer = new RegionSelection();
@@ -47,7 +52,8 @@ charMeasurer.init();
 charMeasurer.onselection(function(coordA, coordB, regWidth, regHeight) {
 	var measuredXTiles = regWidth / 16;
 	var measuredYTiles = regHeight / 8;
-	measurementOut(`Chars:<br>&#9;X: ${regWidth},<br>&#9;Y: ${regHeight}<br>Tiles:<br>&#9;X: ${measuredXTiles},<br>&#9;Y: ${measuredYTiles}`);
+    var measuredTileArea = measuredXTiles * measuredYTiles;
+	measurementOut(`<br>Chars:<br>X: ${regWidth},<br>Y: ${regHeight}<br>Area: ${measuredTileArea*128}<br>Tiles:<br>X: ${measuredXTiles},<br>Y: ${measuredYTiles}<br>Area: ${measuredTileArea} tiles²`);
 });
 
 var measurementSubcommands = {
