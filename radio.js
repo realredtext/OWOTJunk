@@ -4,6 +4,7 @@ let messageName = `[${tunedChannel}]`;
 client_commands.tune = ([setting]) => {
     if(typeof parseFloat(setting) == typeof 1) {
         tunedChannel = setting;
+        messageName = `[${tunedChannel}]`;
         addChat(null, 0, "user", "[Radio]", `Tuned to ${setting}`, "e", 0,0,0, "#DD0000", getDate());
     } else {
         addChat(null, 0, "user", "[Radio]", "Invalid tuning setting!", "e", 0,0,0, "#DD0000", getDate());
