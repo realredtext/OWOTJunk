@@ -1,5 +1,5 @@
 let tunedChannel = "100"; //channel you send AND receive from, big risk to separate the 2
-let messageName = `[${pickupChannel}]`
+let messageName = `[${tunedChannel}]`;
 
 client_commands.tune = ([setting]) => {
     if(typeof parseFloat(setting) == typeof 1) {
