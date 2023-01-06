@@ -1,2 +1,2 @@
 # why read?
-[ gross
+gross
