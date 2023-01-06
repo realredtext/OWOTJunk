@@ -1,5 +1,5 @@
 //dev console tool to chat for worlds without a chat
-w.broadcastReceive(1);
+network.cmd_opt();
 w.on("cmd", (e) => {
     if(! e.data.includes("nametag;pos;")) {
         console.log(e.data);
