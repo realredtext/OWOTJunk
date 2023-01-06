@@ -1,4 +1,4 @@
-w.broadcastReceive(0);
+network.cmd_opt();
 w.on("cmd", (e) => {
     if(e.sender !== w.socketChannel) console.table({
         ...e,
