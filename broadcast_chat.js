@@ -1,7 +1,7 @@
 //dev console tool to chat for worlds without a chat
 network.cmd_opt();
 w.on("cmd", (e) => {
-    if(! e.data.includes("nametag;pos;")) {
+    if(!e.data.startsWith("nametag;pos;")) {
         console.log(e.data);
     };
 });
