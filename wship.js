@@ -1,12 +1,12 @@
 w.on("chatmod", (e) => {
-    if(e.message.includes("w.ship")) {
-        let shipArray = e.message.split(" ");
+    if(e.message.startsWith("w.ship") && !e.hide) {
+        let shipArray = e.message.split(" ").splice(1);
         socket.send(JSON.stringify({
-    kind: "chat",
-    nickname: "w.ship bot",
-    message: `${shipArray[1]} x ${shipArray[2]} is ${Math.round(Math.random() * 100)}% likely to be realistic`,
-    location: 1,
-    color: "#FF0000"
-}))
-    }
-})
+            kind: "chat",
+            nickname: "w.ship bot",
+            message: `${shipArray.join(" x ")} is ${Math.round(Math.random() * 100)}% likely to be realistic`,
+            location: 1,
+            color: "#FF0000"
+        }));
+    };
+});
