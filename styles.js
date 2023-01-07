@@ -12,10 +12,6 @@ chatTab.onmouseleave = () => {
     chatTab.style.backgroundColor = "#880000"
 };
 
-const byId = (elmId) => {
-    return document.getElementById(elmId)
-};
-
 const closeChatBtn = byId("chat_close");
 closeChatBtn.onmouseover = () => {
     closeChatBtn.style.backgroundColor = "#FF6666";
