@@ -20,5 +20,3 @@ closeChatBtn.onmouseover = () => {
 closeChatBtn.onmouseleave = () => {
     closeChatBtn.style.backgroundColor = "#FF0000";
 };
-
-//why cant byId be a built in function
