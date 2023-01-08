@@ -5,8 +5,9 @@ let cmdChatColor = "#FF0000";
 w.on("cmd", (e) => {
     if(!e.data.startsWith("nametag;pos;")) {
         const msgData = JSON.parse(e.data); //name, message, color
-        console.log(`%c${msgData.name}: ${msgData.message}`,
-                    `color:${msgData.color};font-weight:bold;`
+        console.log(`%c${msgData.name}:`,
+                    `color:${msgData.color};font-weight:bold;`,
+                    msgData.message
                    );
     };
 });
