@@ -5,7 +5,7 @@ const logs = {
 
 w.on("chatmod", (e) => {
     if(!e.hide) {
-        let formattedMsg = `(${e.id}) ${e.realUsername!==e.nickname?e.nickname:e.realUsername}: ${e.message}`;
+        let formattedMsg = `(${e.id}) ${e.nickname==e.realUsername?`<b style="color: ${e.color}; text-decoration: underline">`:``}${e.nickname}:${e.nickname===e.realUsername?`</b>`:``} ${e.message}`;
         logs[e.location].push(formattedMsg);
     };
 });
