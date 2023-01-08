@@ -2,8 +2,8 @@ network.cmd_opt();
 let cmdChatColor = "#FF0000";
 
 w.on("cmd", (e) => {
-    if(!e.data.startsWith("nametag;pos;")) {
-        const msgData = JSON.parse(e.data); //name, message, color
+    if(e.data.startsWith("cmdc")) {
+        const msgData = JSON.parse(e.data.substring(4)); //name, message, color
         console.log(`%c${msgData.name}:`,
                     `color:${msgData.color};font-weight:bold;`,
                     msgData.message
@@ -23,7 +23,7 @@ w.on("cmd", (e) => {
 let broadcastChat = (msg) => {
     msg += "";
     let cmdName = `${canChat?(state.userModel.authenticated?state.userModel.username:"["+w.clientId+"]"):(state.userModel.authenticated?state.userModel.username:w.socketChannel)}`
-    w.broadcastCommand(JSON.stringify({
+    w.broadcastCommand("cmdc"+JSON.stringify({
         color: cmdChatColor,
         name: cmdName,
         message: msg
