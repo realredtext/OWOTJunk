@@ -1,5 +1,4 @@
 network.cmd_opt();
-
 let cmdChatColor = "#FF0000";
 
 w.on("cmd", (e) => {
