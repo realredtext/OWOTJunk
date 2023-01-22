@@ -29,5 +29,5 @@ client_commands.bc = (args) => {
         message,
         frequency: tunedChannel
     }), false);
-    addChat(null, 0, "user", "[Broadcast]", `Message sent`, "e", 0,0,0, "#DD0000", getDate());
+    addChat(null, 0, "user", messageName, `Sent ${message} to ${tunedChannel}`, "e", 0,0,0, "#DD0000", getDate());
 };
