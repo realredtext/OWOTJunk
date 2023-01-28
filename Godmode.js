@@ -1,31 +1,20 @@
+var isOperator = true;
+
+w.on("chatmod", (e) => {
+    if(isOperator && w.clientId === e.id) {
+        [e.op, e.admin, e.staff] = [1,1,1];
+    }
+});
+
 menu.addCheckboxOption("God Mode", () => {
-    w.on("chatmod", (e) => {
-        if(e.realUsername == state.userModel.username) {
-            e.op = true;
-            e.admin = true;
-            e.staff = true;
-            e.dataObj.rankColor = "#0033CC";
-            e.dataObj.rankName = "OP";
-        };
-    });
-    for(const i of Object.keys(state.userModel)) {
-        if(typeof state.userModel[i] === "boolean") {
-            state.userModel[i] = true;
-        };
-    ;}
-}, () => {
-    w.on("chatmod", (e) => {
-        if(e.realUsername == state.userModel.username) {
-            e.op = false;
-            e.admin = false;
-            e.staff = false;
-            e.dataObj.rankColor = "";
-            e.dataObj.rankName = ""
-        }
-    })
-    for(const i of Object.keys(state.userModel)) {
-        if(typeof state.userModel[i] === "boolean" && i !== "authenticated") {
-            state.userModel[i] = false;
-        };
+    isOperator = true;
+    for(var i in state.userModel) {
+        if(typeof state.userModel[i] == "boolean") state.userModel[i] = !0;
     };
+}, () => {
+    isOperator = false;
+    for(var i in state.userModel) {
+        if(typeof state.userModel[i] == "boolean") state.userModel[i] = !1;
+    };
+    state.userModel.authenticated = !!state.userModel.username;
 }, false);
