@@ -11,7 +11,7 @@ client_commands.tune = ([setting]) => {
     };
 };
 
-w.broadcastReceive(0);
+network.cmd_opt();
 w.on("cmd", (e) => {
     if(JSON.parse(e.data)) {
         let msg = JSON.parse(e.data); //message, frequency
