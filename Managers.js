@@ -7,4 +7,6 @@ function Manager(color, name) {
     this.send(message, op=true) {
         addChat(null, 0, "user", this.name, message, this.name.replace(/[\[\]]/gm, ""), op, false, false, this.color, getDate())
     };
+    
+    return this;
 };
