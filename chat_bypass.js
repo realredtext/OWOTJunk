@@ -1,3 +1,5 @@
+selectedChatTab = 0;
+
 w.showChat();
 
 let cs_functions = {
@@ -21,7 +23,7 @@ let cs_functions = {
 
     chathistory: (data) => {
         if(data.error) return;
-
+        
         var global_prev = data.global_chat_prev;
 		var page_prev = data.page_chat_prev;
 		for(var g = 0; g < global_prev.length; g++) {
@@ -36,6 +38,16 @@ let cs_functions = {
 			addChat(chat.location, chat.id, type, chat.nickname,
 				chat.message, chat.realUsername, chat.op, chat.admin, chat.staff, chat.color, chat.date, chat);
 		}
+    },
+    channel: (data) => {
+        w.userCount = data.initial_user_count;
+        updateUserCount();
+    },
+    user_count: (data) => {
+        let count = data.count;
+        w.emit("userCount", count);
+        w.userCount = count;
+        updateUserCount();
     }
 };
 
@@ -71,4 +83,4 @@ w.on("chat", (e) => {
 
 elm.chat_page_tab.onclick = function() {
     selectedChatTab = 0;
-}
+};
