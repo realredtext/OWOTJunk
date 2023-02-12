@@ -51,7 +51,7 @@ let cs_functions = {
     }
 };
 
-let chatSocket = new WebSocket("wss://ourworldoftext.com/mhz_chat_bypass/ws/");
+let chatSocket = new WebSocket(`wss://ourworldoftext.com/w/${state.worldModel.name}/ws/`);
 
 chatSocket.onopen = () => {
     chatSocket.send(JSON.stringify({
