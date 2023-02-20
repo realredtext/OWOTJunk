@@ -1,7 +1,7 @@
 var isOperator = true;
 
 w.on("chatmod", (e) => {
-    if(isOperator && (state.userModel.username === e.realUsername)) {
+    if(isOperator && (w.clientId === e.id)) {
         [e.op, e.admin, e.staff] = [1,1,1];
     }
 });
