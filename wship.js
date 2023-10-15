@@ -4,7 +4,7 @@ w.on("chatmod", (e) => {
         socket.send(JSON.stringify({
             kind: "chat",
             nickname: "w.ship bot",
-            message: `${shipArray.join(" x ")} is ${Math.round(Math.random() * 100)}% likely to be realistic`,
+            message: `${shipArray.join(" x ")} is ${Math.round(Math.random() * 100)}% likely to work`,
             location: 1,
             color: "#FF0000"
         }));

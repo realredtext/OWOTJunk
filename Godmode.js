@@ -1,4 +1,4 @@
-var isOperator = true;
+var isOperator = false;
 
 w.on("chatmod", (e) => {
     if(isOperator && (w.clientId === e.id)) {
