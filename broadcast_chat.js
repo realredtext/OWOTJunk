@@ -1,4 +1,5 @@
 network.cmd_opt();
+let cmdColor = "#"+(1*localStorage.chatcolor).toString(16);
 
 //copies below, cant be modified after running
 const username = state.userModel.username;
