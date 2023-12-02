@@ -2,7 +2,7 @@ network.cmd_opt();
 
 //copies below, cant be modified after running
 const username = state.userModel.username;
-const id = w.clientID.toString(10);
+const id = w.clientId.toString(10);
 const authenticated = state.userModel.authenticated;
 const socketChannel = w.socketChannel;
 
