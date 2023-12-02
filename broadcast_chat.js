@@ -30,7 +30,7 @@ const broadcastChat = (msg) => {
     msg += "";
     let cmdName = `${canChat?(authenticated?username:"["+id+"]"):(authenticated?username:socketChannel)}`
     w.broadcastCommand("cmdc"+JSON.stringify({
-        color: "#"+YourWorld.Color.toString(16),
+        color: cmdColor,
         name: cmdName,
         message: msg
     }));
