@@ -1,5 +1,4 @@
-//For _Pippin_
 w.on("chatMod", (e) => {
-    e.dataObj.rankColor="#000";
-    e.dataObj.rankName=e.id
-})
+    e.dataObj.rankColor = "#000";
+    e.dataObj.rankName = e.id;
+});
