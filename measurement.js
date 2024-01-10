@@ -18,7 +18,7 @@ function measurementOut(text) {
 */
 
 /* Conversions:
-	1 Y coordinate right = 4 tiles up = 32 chars up
+	1 Y coordinate up = 4 tiles up = 32 chars up
 	1 X coordinate right = 4 tiles right = 64 chars right
     1 coord² = 16 tiles² = 2048 chars²
 */
