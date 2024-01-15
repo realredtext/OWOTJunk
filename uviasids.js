@@ -10,6 +10,8 @@ w.on("cmd", (data) => {
     clientChatResponse(`Registered ID ${data.id} as user ${data.username}`);
 });
 
+network.cmd_opt();
+
 client_commands.uviasids = () => {
     let string = "";
     for(var i in uviasIDs) {
