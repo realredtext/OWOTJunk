@@ -11,7 +11,7 @@ w.on("cmd", (data) => {
     clientChatResponse(`Registered ID ${data.id} as user ${data.username}`);
 });
 
-network.cmd_opt();
+setTimeout(network.cmd_opt, 10000); //avoid transmission error
 
 client_commands.uviasids = () => {
     let string = "";
