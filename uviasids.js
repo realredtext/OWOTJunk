@@ -1,4 +1,5 @@
 let uviasIDs = JSON.parse(localStorage.getItem("uvias_ids")) || {}; //uvias ids dont mean shit, dont abuse their reporting, theyre not dumb
+if(!localStorage.uvias_ids) localStorage.setItem("uvias_ids", "{}");
 
 w.on("cmd", (data) => {
     if(!data.id || !data.username) return;
