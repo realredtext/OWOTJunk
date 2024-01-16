@@ -16,7 +16,7 @@ setTimeout(network.cmd_opt, 10000); //avoid transmission error
 client_commands.uviasids = () => {
     let string = "";
     for(var i in uviasIDs) {
-        string += `${i}: ${i.id}<br>`
+        string += `${i}: ${uviasIDs[i]}<br>`
     };
 
     clientChatResponse(string);
