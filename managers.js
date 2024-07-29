@@ -27,7 +27,7 @@ function ManagerCommandWrapper(name, color, functions, keyPhrase) {
     this.core = new Manager(this.color, this.name);
 
     client_commands[keyPhrase] = function([subcommand, ...params]) { //TODO: integrate with register_chat_command
-        if(!subcommand) subcommand = "default";
+        if(!subcommand && !params.length) subcommand = "default";
         subcommand = subcommand.toLowerCase();
         if(!subcommand || !(subcommand in top.functions)) {
             return top.core.send(`Invalid subcommand "${subcommand||''}", refer to /${top.keyPhrase} help`);
