@@ -1,4 +1,5 @@
-function Manager(color, name) {
+(()=>{
+    function Manager(color, name) {
     if(!name) return;
     if(!color) color = "#000000";
     this.name = `[ ${name} ]`;
@@ -38,3 +39,9 @@ function ManagerCommandWrapper(name, color, functions, keyPhrase) {
         }
     };
 };
+
+    return {
+        ManagerCommandWrapper,
+        Manager
+    }
+})
